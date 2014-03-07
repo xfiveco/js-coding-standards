@@ -13,6 +13,7 @@ JavaScript Coding Standards you must conform to when writing JS in XHTMLized pro
 - [Splitting functionality](#splitting-functionality)
 - [Code refactoring](#code-refactoring)
 - [Performance optimization](#performance-optimization)
+- [License](#license)
 
 ## Indentation
 
@@ -363,3 +364,9 @@ Not to mention the number of places that will need to be updated if it turns out
 ### Why is performance optimization important?
 
 You may think that performance doesn't matter in small projects. But that's not true. Aside from the matter of code readability, it also forces you to think in a way that will become natural as time passes by. So that when bigger project happens, or when the old one suddenly grows, all good practices are already there and there's no need to suddenly make a big rewrite of everything to make site faster and more responsive to the user actions.
+
+## License
+
+[![](http://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
