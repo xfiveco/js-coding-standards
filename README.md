@@ -6,9 +6,9 @@ JavaScript Coding Standards you must conform to when writing JS in XHTMLized pro
 ## Table of contents
 
 - [Indentation](#indentation)
-- [Line Endings](#line-endings)
-- [Naming Conventions](#naming-conventions)
-- [Control Structures](#control-structures)
+- [Line endings](#line-endings)
+- [Naming conventions](#naming-conventions)
+- [Control structures](#control-structures)
 - [Comments](#comments)
 - [Splitting functionality](#splitting-functionality)
 - [Code refactoring](#code-refactoring)
@@ -54,11 +54,11 @@ NameSpace.Indents.A.Lot.SomeObject
 	]);
 ```
 
-## Line Endings
+## Line endings
 
 Format files with \n as the line ending (Unix line endings). Do not use \r\n (Windows line endings) or \r (Apple OS's).
 
-## Naming Conventions
+## Naming conventions
 
 When you're starting a new project, please use the following naming conventions:
 
@@ -135,7 +135,7 @@ function toggleDropdown() {
 };
 ```
 
-## Control Structures
+## Control structures
 
 Use the following format when writing control structures:
 
