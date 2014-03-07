@@ -189,7 +189,7 @@ finally {
 
 Inline documentation for source files should follow the [JSDoc](http://en.wikipedia.org/wiki/JSDoc) formatting conventions. In addition, please use comments to explain the logic behind more tricky parts of code.
 
-### Why are comments so important?
+### Why are comments important?
 
 Documenting functions, methods, settings and parameters is helpful, but it's not enough. In many cases it's even more important to explain the logic that the code executes. Moreover, writing explanatory comments first and the code itself later will help you organize your thoughts better, resulting in less time wasted writing and debugging.
 
