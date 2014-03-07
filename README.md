@@ -3,6 +3,17 @@ JavaScript Coding Standards
 
 JavaScript Coding Standards you must conform to when writing JS in XHTMLized projects.
 
+## Table of contents
+
+- [Indentation](#indentation)
+- [Line Endings](#line-endings)
+- [Naming Conventions](#naming-conventions)
+- [Control Structures](#control-structures)
+- [Comments](#comments)
+- [Splitting functionality](#splitting-functionality)
+- [Code refactoring](#code-refactoring)
+- [Performance optimization](#performance-optimization)
+
 ## Indentation
 
 Use an indent of 1 tab. Drop anything that breaks a line and indent one full level:
@@ -222,7 +233,7 @@ function toggleDropdown () {
 };
 ```
 
-## Splitting functionality to functions
+## Splitting functionality
 
 When writing a code try to modularize it as much as possible by creating methods/functions (a convention set in the default main.js). If a project has more JavaScript functionality, add namespaces or even separate it into different files.
 
