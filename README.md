@@ -221,3 +221,134 @@ function toggleDropdown () {
 	$tabs.toggleClass('open', !isOpen);
 };
 ```
+
+## Splitting functionality to functions
+
+When writing a code try to modularize it as much as possible by creating methods/functions (a convention set in the default main.js). If a project has more JavaScript functionality, add namespaces or even separate it into different files.
+
+#### Sample D - Proper file organization
+```js
+var App = {
+	/**
+	 * Init Function
+	 */
+	init: function() {
+		App.myFeature1();
+		App.myFeature2();
+	},
+	
+	/**
+	 * App feature 1
+	 */
+	myFeature1: function() {
+		// statements
+	},
+	
+	/**
+	 * Feature 2
+	 */
+	myFeature2: function() {
+		// statements	   
+	}
+}
+```
+
+#### Sample E - Proper file organization
+
+```js
+var App = {
+ 
+	/**
+	 * Init Function
+	 */
+	init: function() {
+		App.Feature1.init();
+		App.Feature2.init();
+	},
+	
+	/**
+	 * App feature 1
+	 */
+	Feature1: {
+		init: function() {
+			App.Feature1.prepareStructure();
+			$('.selector')
+				.on('click', App.Feature1.handleClick)
+				.on('keyup', App.Feature1.handleKeyup);
+		},
+
+		/**
+		 * Some prep feature 1 work
+		 */
+		prepareStructure: function() {
+			// statements
+		},
+
+	    /**
+	     * Does something on click
+	     */
+		handleClick: function() {
+	        // statements
+		},
+	
+		/**
+		 * Does something on keyup
+		 */
+		handleKeyup: function() {
+			// statements
+		}
+	},
+
+	/**
+	 * Feature 2
+	 */
+	Feature2: {
+		// statements
+	}
+}
+```
+
+### Why is splitting functionality to functions important?
+
+Separating functionalities makes your code easier to debug and maintain. If a bug is reported it will be much easier to localize when you can just focus on one section of the logic and ignore (or even temporary turn off) other modules. In addition, when writing in a modular style you will probably automatically stop to write code that depends on so many things to actually work.
+
+Do you know the scenario? You've implemented the tabs on a page - and they work great. You also implemented popups - and they work great too. But now the Client sends "a small modification" to the designs. And now you must have tabs in the popups as well. Will they work out-of-the-box or will you need to modify quite a bit of code to get it done? With modular-based code, in the best case scenario, you probably won't need to do anything or write a one-line initializer. In the worst case scenario, you at least have all functionality code in one place and don't need to re-read a lot of the code to find places to modify.
+
+## Code refactoring
+
+Try to adhere to the [DRY principles](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Copy-pasting code results in very hard maintenance, bigger file sizes and overall debugging nightmare. If two blocks of code look similar, see if they cannot be parametrized and written only once. If handling some events is almost the same, then extract common logic to the separate method/function and call it inside event handlers. If there are some "magic numbers" in your code - try to move them into constants with names that actually will tell the reader what it is.
+
+Don't be afraid to use delete key. If some code is no longer needed, simply remove it from the file. If you found a great solution on the web, look through it to see if you need everything that's in there. And make sure you understand, at least general terms, what is it doing and why it is doing it this way. This will help you to avoid conflicts and working around something that could be easily changed.
+
+### Why is code refactoring important?
+
+You may think that you project is small, has a well-defined set of functionalities and will never change. And usually you're right. But when that exception comes and you've written code that can handle only that specific set of requirements, it will hurt you. Or, the developer that is tasked with making modifications will want to hurt you. All because you've hardcoded some heights eight times throughout the file, assumed that no one will ever want to have two slider sections on the same page, or assumed that tiles will always be directly on a page, never dynamically loaded.
+
+## Performance optimization
+
+There are many great performace tips out there, both for jQuery and pure JavaScript. Some of them are:
+
+- http://jonraasch.com/blog/10-advanced-jquery-performance-tuning-tips-from-paul-irish
+- http://24ways.org/2011/your-jquery-now-with-less-suck/
+- http://www.joezimjs.com/javascript/3-simple-things-to-make-your-jquery-code-awesome/
+
+One of the simplest, and at the same time, improving code quality, is jQuery collection caching. When you have some root element that you will be selecting all other needed elements from - keep it in variable instead of selecting it over and over. Searching the DOM is costly, especially in slightly older browsers. So this:
+
+```js
+var $container = $('.my-root'),
+	$list = $container.find('.my-list'),
+	$items = $container.find('.my-items');
+```
+
+is better than:
+
+```js
+var $list = $('.my-root .my-list'),
+	$items = $('.my-root .my-items');
+```
+
+Not to mention the number of places that will need to be updated if it turns out that `.my-root` needs to be called `.my-unique-root` because the other name conflicted with something.
+
+### Why is performance optimization important?
+
+You may think that performance doesn't matter in small projects. But that's not true. Aside from the matter of code readability, it also forces you to think in a way that will become natural as time passes by. So that when bigger project happens, or when the old one suddenly grows, all good practices are already there and there's no need to suddenly make a big rewrite of everything to make site faster and more responsive to the user actions.
