@@ -17,42 +17,42 @@ JavaScript Coding Standards you must conform to when writing JS in XHTMLized pro
 
 ## Indentation
 
-Use an indent of 1 tab. Drop anything that breaks a line and indent one full level:
+Use soft tabs with two spaces. Drop anything that breaks a line and indent one full level:
 
 ```js	
 SomeObject
-	.myMethod().chain1()
-	.chain2().chain3();
+  .myMethod().chain1()
+  .chain2().chain3();
  
 SomeObject.myMethod({
-	some: value,
-	another: value
+  some: value,
+  another: value
 });
  
 var myList = [
-	"some",
-	"another"
+  "some",
+  "another"
 ];
  
 NameSpace.Indents.A.Lot.SomeObject
-	.chainMethod(foo)
-	.chainMethodWithALongName(
-		bar,
-		someReallyLongVariable
-	)
-	.chainMethod({
-		foo: bar,
-		another: [
-		    'set',
-		    'of',
-		    'values'
-		]
-	})
-	.chainMethod([
-		foo,
-		bar,
-		value
-	]);
+  .chainMethod(foo)
+  .chainMethodWithALongName(
+  	bar,
+  	someReallyLongVariable
+  )
+  .chainMethod({
+  	foo: bar,
+  	another: [
+      'set',
+      'of',
+      'values'
+  	]
+  })
+  .chainMethod([
+  	foo,
+  	bar,
+  	value
+  ]);
 ```
 
 ## Line endings
@@ -79,60 +79,60 @@ Code without any set standard is much harder to read and work with. Let's prove 
 #### Sample A - Wrong naming
 ```js
 function toggle() {
-	var tabs = $(this).closest('.tabs'),
-		d_cont = tabs.siblings('.drawers'),
-		li = tabs.children('ul'),
-		o = tabs.hasClass('open'),
-		h = 0, oh, tH;
-	
-	if (o) {
-		li.height('');
-		oh = d_cont.data('oh');
-		d_cont.height(oh);
-	}
-	else {
-		li.children().each(function () {
-			h += $(this).outerHeight();
-		});
-		li.height(h);
-		oh = d_cont.height();
-		tH = tabs.outerHeight(true);
-		d_cont
-			.data('oh', oh)
-			.height(Math.max(oh, h - tH));
-	}
-	
-	tabs.toggleClass('open', !o);
+  var tabs = $(this).closest('.tabs'),
+  	d_cont = tabs.siblings('.drawers'),
+  	li = tabs.children('ul'),
+  	o = tabs.hasClass('open'),
+  	h = 0, oh, tH;
+  
+  if (o) {
+  	li.height('');
+  	oh = d_cont.data('oh');
+  	d_cont.height(oh);
+  }
+  else {
+  	li.children().each(function () {
+  	  h += $(this).outerHeight();
+  	});
+  	li.height(h);
+  	oh = d_cont.height();
+  	tH = tabs.outerHeight(true);
+  	d_cont
+      .data('oh', oh)
+      .height(Math.max(oh, h - tH));
+  }
+  
+  tabs.toggleClass('open', !o);
 };
 ```
 
 #### Sample B - Proper naming
 ```js
 function toggleDropdown() {
-	var $tabs = $(this).closest('.tabs'),
-		$drawersContainer = $tabs.siblings('.drawers'),
-		$list = $tabs.children('ul'),
-		isOpen = $tabs.hasClass('open'),
-		h = 0, oldH, tabsH;
- 
-	if (isOpen) {
-		$list.height('');
-		oldH = $drawersContainer.data('oldH');
-		$drawersContainer.height(oldH);
-	}
-	else {
-		$list.children().each(function () {
-			h += $(this).outerHeight();
-		});
-		$list.height(h);
-		oldH = $drawersContainer.height();
-		tabsH = $tabs.outerHeight(true);
-		$drawersContainer
-			.data('oldH', oldH)
-			.height(Math.max(oldH, h - tabsH));
+  var $tabs = $(this).closest('.tabs'),
+  	$drawersContainer = $tabs.siblings('.drawers'),
+  	$list = $tabs.children('ul'),
+  	isOpen = $tabs.hasClass('open'),
+  	h = 0, oldH, tabsH;
+  
+  if (isOpen) {
+  	$list.height('');
+  	oldH = $drawersContainer.data('oldH');
+  	$drawersContainer.height(oldH);
+  }
+  else {
+  	$list.children().each(function () {
+  	  h += $(this).outerHeight();
+  	});
+  	$list.height(h);
+  	oldH = $drawersContainer.height();
+  	tabsH = $tabs.outerHeight(true);
+  	$drawersContainer
+  	  .data('oldH', oldH)
+  	  .height(Math.max(oldH, h - tabsH));
     }
- 
-	$tabs.toggleClass('open', !isOpen);
+  
+  $tabs.toggleClass('open', !isOpen);
 };
 ```
 
@@ -144,13 +144,13 @@ Use the following format when writing control structures:
 
 ```js
 if (condition1 || condition2) {
-	action1();
+  action1();
 }
 else if (condition3 && condition4) {
-	action2();
+  action2();
 }
 else {
-	defaultAction();
+  defaultAction();
 }
 ```
 
@@ -158,16 +158,16 @@ else {
 
 ```js
 switch (condition) {
-	case 1:
-		action1();
-		break;
- 
-	case 2:
-		action2();
-		break;
- 
-	default:
-		defaultAction();
+  case 1:
+  	action1();
+  	break;
+  
+  case 2:
+  	action2();
+  	break;
+  
+  default:
+  	defaultAction();
 }
 ```
 
@@ -175,13 +175,13 @@ switch (condition) {
 
 ```js
 try {
-	// Statements...
+  // Statements...
 }
 catch (variable) {
-	// Error handling...
+  // Error handling...
 }
 finally {
-	// Statements...
+  // Statements...
 }
 
 ```
@@ -202,35 +202,35 @@ Documenting functions, methods, settings and parameters is helpful, but it's not
  * @this {HTMLElement} Drawer tab.
  */
 function toggleDropdown () {
-	var $tabs = $(this).closest('.tabs'),
-		$drawersContainer = $tabs.siblings('.drawers'),
-		$list = $tabs.children('ul'),
-		isOpen = $tabs.hasClass('open'),
-		h = 0, oldH, tabsH;
- 
-	if (isOpen) {
-		// Reset heights
-		$list.height('');
-		oldH = $drawersContainer.data('oldH');
-		$drawersContainer.height(oldH);
-	}
-	else {
-		// Set list height to the sum of children heights
-		$list.children().each(function () {
-		    h += $(this).outerHeight();
-		});
-		$list.height(h);
-		// Remember old container height
-		oldH = $drawersContainer.height();
-		// Ensure drawer container has same or bigger height
-		// so that whole dropdown would be visible
-		tabsH = $tabs.outerHeight(true);
-		$drawersContainer
-			.data('oldH', oldH)
-			.height(Math.max(oldH, h - tabsH));
+  var $tabs = $(this).closest('.tabs'),
+  	$drawersContainer = $tabs.siblings('.drawers'),
+  	$list = $tabs.children('ul'),
+  	isOpen = $tabs.hasClass('open'),
+  	h = 0, oldH, tabsH;
+  
+  if (isOpen) {
+  	// Reset heights
+  	$list.height('');
+  	oldH = $drawersContainer.data('oldH');
+  	$drawersContainer.height(oldH);
+  }
+  else {
+  	// Set list height to the sum of children heights
+  	$list.children().each(function () {
+  	  h += $(this).outerHeight();
+  	});
+  	$list.height(h);
+  	// Remember old container height
+  	oldH = $drawersContainer.height();
+  	// Ensure drawer container has same or bigger height
+  	// so that whole dropdown would be visible
+  	tabsH = $tabs.outerHeight(true);
+  	$drawersContainer
+      .data('oldH', oldH)
+      .height(Math.max(oldH, h - tabsH));
     }
- 
-	$tabs.toggleClass('open', !isOpen);
+  
+  $tabs.toggleClass('open', !isOpen);
 };
 ```
 
@@ -241,27 +241,27 @@ When writing a code try to modularize it as much as possible by creating methods
 #### Sample D - Proper file organization
 ```js
 var App = {
-	/**
-	 * Init Function
-	 */
-	init: function() {
-		App.myFeature1();
-		App.myFeature2();
-	},
-	
-	/**
-	 * App feature 1
-	 */
-	myFeature1: function() {
-		// statements
-	},
-	
-	/**
-	 * Feature 2
-	 */
-	myFeature2: function() {
-		// statements	   
-	}
+  /**
+   * Init Function
+   */
+  init: function() {
+  	App.myFeature1();
+  	App.myFeature2();
+  },
+  
+  /**
+   * App feature 1
+   */
+  myFeature1: function() {
+  	// statements
+  },
+  
+  /**
+   * Feature 2
+   */
+  myFeature2: function() {
+  	// statements	   
+  }
 }
 ```
 
@@ -270,53 +270,53 @@ var App = {
 ```js
 var App = {
  
-	/**
-	 * Init Function
-	 */
-	init: function() {
-		App.Feature1.init();
-		App.Feature2.init();
-	},
-	
-	/**
-	 * App feature 1
-	 */
-	Feature1: {
-		init: function() {
-			App.Feature1.prepareStructure();
-			$('.selector')
-				.on('click', App.Feature1.handleClick)
-				.on('keyup', App.Feature1.handleKeyup);
-		},
-
-		/**
-		 * Some prep feature 1 work
-		 */
-		prepareStructure: function() {
-			// statements
-		},
-
-	    /**
-	     * Does something on click
-	     */
-		handleClick: function() {
-	        // statements
-		},
-	
-		/**
-		 * Does something on keyup
-		 */
-		handleKeyup: function() {
-			// statements
-		}
-	},
-
-	/**
-	 * Feature 2
-	 */
-	Feature2: {
-		// statements
-	}
+  /**
+   * Init Function
+   */
+  init: function() {
+  	App.Feature1.init();
+  	App.Feature2.init();
+  },
+  
+  /**
+   * App feature 1
+   */
+  Feature1: {
+  	init: function() {
+      App.Feature1.prepareStructure();
+      $('.selector')
+      	.on('click', App.Feature1.handleClick)
+      	.on('keyup', App.Feature1.handleKeyup);
+  	},
+  
+  	/**
+  	 * Some prep feature 1 work
+  	 */
+  	prepareStructure: function() {
+      // statements
+  	},
+  
+    /**
+     * Does something on click
+     */
+  	handleClick: function() {
+      // statements
+  	},
+  
+  	/**
+  	 * Does something on keyup
+  	 */
+  	handleKeyup: function() {
+      // statements
+  	}
+  },
+  
+  /**
+   * Feature 2
+   */
+  Feature2: {
+  	// statements
+  }
 }
 ```
 
@@ -348,15 +348,15 @@ One of the simplest, and at the same time, improving code quality, is jQuery col
 
 ```js
 var $container = $('.my-root'),
-	$list = $container.find('.my-list'),
-	$items = $container.find('.my-items');
+  $list = $container.find('.my-list'),
+  $items = $container.find('.my-items');
 ```
 
 is better than:
 
 ```js
 var $list = $('.my-root .my-list'),
-	$items = $('.my-root .my-items');
+  $items = $('.my-root .my-items');
 ```
 
 Not to mention the number of places that will need to be updated if it turns out that `.my-root` needs to be called `.my-unique-root` because the other name conflicted with something.
