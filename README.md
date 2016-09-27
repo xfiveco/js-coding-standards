@@ -43,11 +43,9 @@ Use the following format when writing control structures:
 ```js
 if (condition1 || condition2) {
   action1();
-}
-else if (condition3 && condition4) {
+} else if (condition3 && condition4) {
   action2();
-}
-else {
+} else {
   defaultAction();
 }
 ```
@@ -74,11 +72,9 @@ switch (condition) {
 ```js
 try {
   // Statements...
-}
-catch (variable) {
+} catch (variable) {
   // Error handling...
-}
-finally {
+} finally {
   // Statements...
 }
 
