@@ -3,6 +3,21 @@ JavaScript Coding Standards
 
 JavaScript Coding Standards you must conform to when writing JS in Xfive projects.
 
+## Table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Code style](#code-style)
+- [Line endings](#line-endings)
+- [Variables](#variables)
+- [Comments](#comments)
+- [Modules/dependencies](#modulesdependencies)
+- [Code structure](#code-structure)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Code style
 
 Please use `eslint-config-airbnb-base` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about the small details.
