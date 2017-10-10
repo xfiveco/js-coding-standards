@@ -20,7 +20,7 @@ JavaScript Coding Standards you must conform to when writing JS in Xfive project
 
 ## Code style
 
-Please use `eslint-config-airbnb-base` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about the small details.
+Use `eslint-config-airbnb-base` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about the small details.
 
 ## Line endings
 
@@ -28,7 +28,7 @@ Format files with \n as the line ending (Unix line endings). Do not use \r\n (Wi
 
 ## Variables
 
-When you're starting a new project, please use the following naming conventions:
+When you're starting a new project, use the following naming conventions:
 
 - Prefer [block scoping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block) with let and const.
 - Use `const` to assign a variable unless you’re certain you’re going to reassign it later.
