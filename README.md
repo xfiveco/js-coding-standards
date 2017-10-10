@@ -47,7 +47,7 @@ When you're starting a new project, use the following naming conventions:
 - Avoid UPPERCASE_NAMING for mutable values like arrays or object literals.
 
   Following examples aren’t constants as they can be easily updated. This is why using uppercase naming is misleading when used with them.
-  
+
   ```js
   const MY_ARR = [1, 2, 3];
   MY_ARR.splice(0);
@@ -56,7 +56,7 @@ When you're starting a new project, use the following naming conventions:
   // Holy moly the array is now empty!
 
   ```
-  
+
   ```
   const MY_OBJECT = { a: 'something important' };
   delete MY_OBJECT.a;
@@ -92,13 +92,13 @@ When working with existing project it is important to recognize and follow the s
         console.log('Bam!');
       }
     };
-    
+
     // But the class is more suitable for the job!
     class App {
       constructor() {
         this.doSomething();
       }
-             
+
       doSomething() {
         console.log('Oh boy a class!');
       }
