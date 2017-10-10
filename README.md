@@ -34,7 +34,6 @@ When you're starting a new project, use the following naming conventions:
 - Use `const` to assign a variable unless you’re certain you’re going to reassign it later.
 - In general, use **camelCase** to name variables. Of course, there can be exceptions like sometimes you have_to_use underscores to access a value from JSON and can’t do much about it. Or there’s a third party code which imposes certain naming conventions.
 - Start class names (constructors) with a **BigLetter**.
-- **UpperCamelCase** for all constructor functions and namespace objects
 - Use **UPPERCASE_WITH_UNDERSCORES** to name constants. You can define constants in JS with assigning a [primitive value](https://developer.mozilla.org/pl/docs/Glossary/Primitive) with `const`.
 
   Following examples have one thing in common: they can’t be reassigned nor mutated. This makes them constants.
