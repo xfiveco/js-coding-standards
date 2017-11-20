@@ -20,7 +20,7 @@ JavaScript Coding Standards you must conform to when writing JS in Xfive project
 
 ## Code style
 
-Use `eslint-config-airbnb-base` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about the small details.
+Use `eslint-config-chisel` or `eslint-config-airbnb` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about the small details.
 
 ## Line endings
 
