@@ -29,8 +29,8 @@ We recommend to use ESLint (and, optionally, Prettier) for automated code format
   - Prettier is less concerned about code problems and more about the way it's formatted. Running Prettier results in nearly instant code adjustment (things snap into place).
   - If you want to choose just one tool, ESLint is probably the better choice.
 * Make sure you've got ESLint and Prettier _installed locally_ (in the project's `node_modules`). Relying on a global versions may result in inconsistencies:
-  - non passing linting checks
-  - generating diffs in unwanted places
+  - Non passing linting checks.
+  - Generating diffs in unwanted places.
 * ESLint [is](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) [well](https://www.jetbrains.com/help/phpstorm/eslint.html) [supported](https://packagecontrol.io/packages/ESLint) [in](https://atom.io/packages/eslint) [many](https://daqo.medium.com/vim-and-eslint-16fa08cc580f) code editors.
 * The [same](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) [goes](https://www.jetbrains.com/help/phpstorm/prettier.html) [for](https://atom.io/packages/prettier-atom) Prettier.
 * Avoid mixing large ESLint auto fix changes with the intended updates in version control. E.g., you may want to update a variable's name which results in 2 or 3 updated lines but also decide to run ESLint auto fix changing 80% of the file. It's better to split that into 2 commits:
