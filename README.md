@@ -20,21 +20,25 @@ JavaScript Coding Standards you must conform to when writing JS in Xfive project
 
 ## Code style
 
-Use `eslint-config-chisel` or `eslint-config-airbnb` with `eslint-config-prettier`. This setup allows for automatic code formatting with [Prettier](https://github.com/prettier/prettier) so you don't need to worry about all the code style details.
+We recommend to use ESLint (and, optionally, Prettier) for automated code formatting in your favourite code editor or IDE.
 
-* See Chisel's [code style guidelines](https://github.com/xfiveco/generator-chisel/tree/rewrite-with-webpack/packages/eslint-config-chisel).
-* Both Eslint and Prettier work best when integrated with you favourite code editor or IDE.
-* Make sure you've got Eslint and Prettier _installed locally_ (in the project's `node_modules`). Relying on a global versions may result in inconsistencies:
+* Take a look at [code style guidelines](https://github.com/xfiveco/generator-chisel/tree/rewrite-with-webpack/packages/eslint-config-chisel) in case you're going to work with Chisel.
+* Both ESLint and Prettier work best when integrated with you favourite code editor or IDE.
+* ESLint (linter) covers wider area then Prettier (code style formatter). E.g.,
+  - ESLint is able to detect things like unused variables or problems related to hook dependencies in React. It's usually slower than Prettier but running an auto fix should take care of most of the (fixable) problems.
+  - Prettier is less concerned about code problems and more about the way it's formatted. Running Prettier results in nearly instant code adjustment (things snap into place).
+  - If you want to choose just one tool, ESLint is probably the better choice.
+* Make sure you've got ESLint and Prettier _installed locally_ (in the project's `node_modules`). Relying on a global versions may result in inconsistencies:
   - non passing linting checks
-  - generating diffs in unwated places
-* Eslint [is](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) [well](https://www.jetbrains.com/help/phpstorm/eslint.html) [supported](https://packagecontrol.io/packages/ESLint) [in](https://atom.io/packages/eslint) [many](https://daqo.medium.com/vim-and-eslint-16fa08cc580f) code editors.
+  - generating diffs in unwanted places
+* ESLint [is](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) [well](https://www.jetbrains.com/help/phpstorm/eslint.html) [supported](https://packagecontrol.io/packages/ESLint) [in](https://atom.io/packages/eslint) [many](https://daqo.medium.com/vim-and-eslint-16fa08cc580f) code editors.
 * The [same](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) [goes](https://www.jetbrains.com/help/phpstorm/prettier.html) [for](https://atom.io/packages/prettier-atom) Prettier.
-* Avoid mixing large Eslint autofix changes with the intended updates in version control. E.g., you may want to update a variable's name which results in 2 or 3 updated lines but also decide to run Eslint autofix changing 80% of the file. It's better to split that into 2 commits:
+* Avoid mixing large ESLint auto fix changes with the intended updates in version control. E.g., you may want to update a variable's name which results in 2 or 3 updated lines but also decide to run ESLint auto fix changing 80% of the file. It's better to split that into 2 commits:
   1. The intended update.
-  2. Eslint fixes.
+  2. ESLint fixes.
 
   It makes for a much more readable commit history.
-* Remeber you can disable selected Eslint rules if required: https://eslint.org/docs/user-guide/configuring/rules#disabling-rules
+* Remember you can disable selected ESLint rules if required: https://eslint.org/docs/user-guide/configuring/rules#disabling-rules
 
 
 ## Line endings
