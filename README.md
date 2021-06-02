@@ -22,7 +22,7 @@ JavaScript Coding Standards you must conform to when writing JS in Xfive project
 
 We recommend to use ESLint (and, optionally, Prettier) for automated code formatting in your favourite code editor or IDE.
 
-* Take a look at [code style guidelines](https://github.com/xfiveco/generator-chisel/tree/rewrite-with-webpack/packages/eslint-config-chisel) in case you're going to work with Chisel.
+* Take a look at [code style guidelines](https://github.com/xfiveco/generator-chisel/tree/53f8f0fdb14cc140eb292688615fd94dfe7c2426/packages/eslint-config-chisel#readme) in case you're going to work with Chisel.
 * Both ESLint and Prettier work best when integrated with you favourite code editor or IDE.
 * ESLint (linter) covers wider area then Prettier (code style formatter). E.g.,
   - ESLint is able to detect things like unused variables or problems related to hook dependencies in React. It's usually slower than Prettier but running an auto fix should take care of most of the (fixable) problems.
